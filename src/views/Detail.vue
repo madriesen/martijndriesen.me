@@ -13,7 +13,7 @@
 </template>
 <script>
 import AsideBar from '@/components/detail/AsideBar.vue';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'detail',
@@ -23,6 +23,16 @@ export default {
     ...mapGetters({
       title: 'current_location_name',
     }),
+  },
+
+  methods: {
+    ...mapActions({
+      setLocation: 'setCurrentLocation',
+    }),
+  },
+
+  created() {
+    this.setLocation(this.$route.name);
   },
 };
 </script>
