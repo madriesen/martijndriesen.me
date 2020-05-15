@@ -22,7 +22,7 @@ export default {
         { title: 'bar', text: 'Waiter / Bartender' },
         { title: 'webdev', text: 'Web Development' },
         { title: 'sound', text: 'Sound Engineer' },
-        { title: 'contact', text: 'Contact' },
+        // { title: 'contact', text: 'Contact' },
       ],
     };
   },
