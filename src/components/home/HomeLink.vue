@@ -1,5 +1,5 @@
 <template>
-  <router-link to="#" @click.native.prevent="updateLocation">
+  <my-router-link :location="this.location">
     <h1
       class="home-link
       hover:text-primary
@@ -11,25 +11,12 @@
     >
       <slot></slot>
     </h1>
-  </router-link>
+  </my-router-link>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-
 export default {
   name: 'home-link',
   props: ['location'],
-
-  methods: {
-    ...mapActions({
-      setLocation: 'setLocation',
-    }),
-
-    updateLocation() {
-      this.setLocation(this.location);
-      this.$router.push(this.location);
-    },
-  },
 };
 </script>

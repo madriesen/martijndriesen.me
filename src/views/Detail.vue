@@ -7,14 +7,17 @@
       }"
     >
       <div
-        class="bg-secondary absolute top-0 right-0 w-full h-full z-10 text-center"
+        class="bg-secondary
+              absolute
+              top-0 right-0
+              w-full h-full z-10 pt-24"
       >
-        <div class="mt-16 mx-auto w-24 z-20">
+        <div class="mx-auto w-24 z-20">
           <router-link to="/">
             <img src="/images/logo/icon_White.png" alt="logo" />
           </router-link>
         </div>
-        <div class="text-white">[navbar]</div>
+        <side-nav class="text-center" />
       </div>
     </div>
   </div>
@@ -22,8 +25,12 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
+import SideNav from '@/components/detail/SideNav.vue';
+
 export default {
   name: 'detail',
+
+  components: { 'side-nav': SideNav },
 
   data() {
     return {
