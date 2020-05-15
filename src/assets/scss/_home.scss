@@ -1,0 +1,48 @@
+.makeSmall {
+    animation: makeSmall 1000ms;
+    animation-fill-mode: forwards;
+}
+
+.stayLarge {
+    animation: stayLarge 1000ms;
+    animation-fill-mode: forwards;
+}
+
+.bar {
+    animation-delay: 400ms;
+}
+
+.webdev {
+    animation-delay: 200ms;
+}
+
+.sound {
+    animation-delay: 0ms;
+}
+
+@keyframes makeSmall {
+    0% {
+        height: 100%;
+        width: 100%;
+    }
+    75% {
+        height: 0%;
+        width: 100%;
+    }
+    100% {
+        height: 0%;
+        width: 0%;
+    }
+}
+
+@keyframes stayLarge {
+    0% {
+        width: 100%;
+    }
+    75% {
+        width: 100%;
+    }
+    100% {
+        width: 10%;
+    }
+}

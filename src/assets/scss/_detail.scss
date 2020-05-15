@@ -1,0 +1,49 @@
+.aside-bar {
+    transform-origin: top center;
+    animation: fullHeight 1000ms;
+}
+
+.title-div {
+    transform-origin: top left;
+    animation: fullWidth 1500ms;
+}
+
+.detail-content {
+    animation: makeVisible 2500ms;
+}
+
+@keyframes fullHeight {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fullWidth {
+    0% {
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes makeVisible {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

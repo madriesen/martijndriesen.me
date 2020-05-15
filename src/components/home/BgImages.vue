@@ -7,6 +7,14 @@
       :style="{
         'background-image': 'url(' + baseurl + image.image + ')',
       }"
+      :class="
+        location != 'home'
+        // && location != image.title
+          ? image.title + ' makeSmall'
+          : [location != 'home']
+          ? image.title
+          : image.title + ' makeSmall'
+      "
     >
       <div class="bg-secondary absolute top-0 right-0 w-full h-full z-10">
         <div
@@ -52,7 +60,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      location: 'location',
+      location: 'current_location',
     }),
   },
 };

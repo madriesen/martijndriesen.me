@@ -30,10 +30,7 @@ export default {
       locations: 'locations',
     }),
     navItems() {
-      return this.locations.filter((item) => {
-        console.log('item.title', item.title);
-        return item.title !== this.current_location;
-      });
+      return this.locations.filter((item) => item.title !== this.current_location && item.title !== 'home');
     },
   },
 };

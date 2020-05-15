@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     current_location: 'home',
     locations: [
+      { title: 'home', text: 'home' },
       { title: 'bar', text: 'Waiter / Bartender' },
       { title: 'webdev', text: 'Web Development' },
       { title: 'sound', text: 'Sound Engineer' },
@@ -31,8 +32,8 @@ export default new Vuex.Store({
   },
   actions: {
     setCurrentLocation({ commit }, location) {
-      console.log('set_location', location);
-      commit('SET_CURRENT_LOCATION', location);
+      const newLocation = (location === '/') ? 'home' : location;
+      commit('SET_CURRENT_LOCATION', newLocation);
     },
   },
   modules: {
