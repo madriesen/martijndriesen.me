@@ -20,6 +20,9 @@ export default new Vuex.Store({
     locations(state) {
       return state.locations;
     },
+    current_location_name(state) {
+      return state.locations.filter((item) => item.title === state.current_location);
+    },
   },
   mutations: {
     SET_CURRENT_LOCATION(state, location) {

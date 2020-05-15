@@ -6,16 +6,23 @@
       <div
         class="w-full h-32 bg-primary flex items-center content-center justify-start pl-24"
       >
-        <h1 class="text-white text-6xl pt-3">Locatie</h1>
+        <h1 class="text-white text-6xl pt-3">{{ this.title[0].text }}</h1>
       </div>
     </div>
   </div>
 </template>
 <script>
 import AsideBar from '@/components/detail/AsideBar.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'detail',
   components: { 'aside-bar': AsideBar },
+
+  computed: {
+    ...mapGetters({
+      title: 'current_location_name',
+    }),
+  },
 };
 </script>
