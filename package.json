@@ -1,5 +1,5 @@
 {
-  "name": "vue-template",
+  "name": "martijndriesen",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,11 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "autoprefixer": "^9.7.6",
     "core-js": "^3.6.4",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
+    "tailwindcss": "^1.4.6",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"
