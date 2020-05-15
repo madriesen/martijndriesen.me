@@ -5,12 +5,12 @@
       v-for="(image, title) in this.images"
       :key="title"
       :style="{
-        'background-image': 'url(' + baseurl + image.image + ')',
+        'background-image': 'url(' + baseurl + image.title + '.jpg)',
       }"
       :class="
         location != 'home'
-        // && location != image.title
-          ? image.title + ' makeSmall'
+          ? // && location != image.title
+            image.title + ' makeSmall'
           : [location != 'home']
           ? image.title
           : image.title + ' makeSmall'
@@ -38,30 +38,32 @@ export default {
   data() {
     return {
       baseurl: '/images/background/',
-      images: [
-        {
-          title: 'bar',
-          image: 'bar.jpg',
-          text: 'Waiter / Bartender',
-        },
-        {
-          title: 'webdev',
-          image: 'webdev.jpg',
-          text: 'Web Developer',
-        },
-        {
-          title: 'sound',
-          image: 'sound.jpg',
-          text: 'Sound Engineer',
-        },
-      ],
+      // images: [
+      //   {
+      //     title: 'bar',
+      //     text: 'Waiter / Bartender',
+      //   },
+      //   {
+      //     title: 'webdev',
+      //     text: 'Web Developer',
+      //   },
+      //   {
+      //     title: 'sound',
+      //     text: 'Sound Engineer',
+      //   },
+      // ],
     };
   },
 
   computed: {
     ...mapGetters({
       location: 'current_location',
+      locations: 'locations',
     }),
+
+    images() {
+      return this.locations.filter((item) => item.title !== 'home');
+    },
   },
 };
 </script>
