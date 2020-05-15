@@ -1,7 +1,11 @@
 <template>
   <div class="text-primary">
     <ul class="mt-8">
-      <list-item v-for="(location, title) in navItems" :key="title" :route="location.title">
+      <list-item
+        v-for="(location, title) in navItems"
+        :key="title"
+        :route="location.title"
+      >
         {{ location.text }}
       </list-item>
     </ul>
@@ -17,24 +21,18 @@ export default {
   components: { 'list-item': ListItem },
 
   data() {
-    return {
-      locations: [
-        { title: 'bar', text: 'Waiter / Bartender' },
-        { title: 'webdev', text: 'Web Development' },
-        { title: 'sound', text: 'Sound Engineer' },
-        // { title: 'contact', text: 'Contact' },
-      ],
-    };
+    return {};
   },
 
   computed: {
     ...mapGetters({
-      location: 'location',
+      current_location: 'current_location',
+      locations: 'locations',
     }),
     navItems() {
       return this.locations.filter((item) => {
         console.log('item.title', item.title);
-        return item.title !== this.location;
+        return item.title !== this.current_location;
       });
     },
   },

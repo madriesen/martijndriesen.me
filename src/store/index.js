@@ -5,22 +5,31 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    location: 'home',
+    current_location: 'home',
+    locations: [
+      { title: 'bar', text: 'Waiter / Bartender' },
+      { title: 'webdev', text: 'Web Development' },
+      { title: 'sound', text: 'Sound Engineer' },
+      // { title: 'contact', text: 'Contact' },
+    ],
   },
   getters: {
-    location(state) {
-      return state.location;
+    current_location(state) {
+      return state.current_location;
+    },
+    locations(state) {
+      return state.locations;
     },
   },
   mutations: {
-    SET_LOCATION(state, location) {
-      state.location = location;
+    SET_CURRENT_LOCATION(state, location) {
+      state.current_location = location;
     },
   },
   actions: {
-    setLocation({ commit }, location) {
+    setCurrentLocation({ commit }, location) {
       console.log('set_location', location);
-      commit('SET_LOCATION', location);
+      commit('SET_CURRENT_LOCATION', location);
     },
   },
   modules: {

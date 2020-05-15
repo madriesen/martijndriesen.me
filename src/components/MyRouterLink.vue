@@ -13,12 +13,12 @@ export default {
 
   methods: {
     ...mapActions({
-      setLocation: 'setLocation',
+      setCurrentLocation: 'setCurrentLocation',
     }),
 
     updateLocation() {
       console.log('this.location', this.location);
-      this.setLocation(this.location);
+      this.setCurrentLocation(this.location);
       this.$router.push(this.location);
     },
   },
