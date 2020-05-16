@@ -9,7 +9,7 @@ export default new Vuex.Store({
     locations: [
       { title: 'home', text: 'home' },
       { title: 'bar', text: 'Waiter / Bartender' },
-      { title: 'webdev', text: 'Web Development' },
+      { title: 'webdev', text: 'Web Developer' },
       { title: 'sound', text: 'Sound Engineer' },
       // { title: 'contact', text: 'Contact' },
     ],
