@@ -27,7 +27,9 @@ export default {
       if (
         this.location !== '/'
         && (this.current_location === 'home' || this.current_location === '/')
-      ) delaytime = 1400;
+      ) {
+        delaytime = 1000;
+      }
       console.log('delaytime for ', this.location, delaytime);
 
       this.setCurrentLocation(this.location);

@@ -7,8 +7,12 @@
         class="title-div w-full h-32 bg-primary
         flex items-center content-center justify-start  pl-24"
       >
-        <h1 class="detail-content text-white text-6xl pt-3">
+        <h1 class="relative text-white text-6xl pt-3 overflow-hidden">
           {{ this.title[0].text }}
+          <div
+            class="top-0 right-0 bottom-0
+          absolute h-full bg-primary detail-header"
+          ></div>
         </h1>
       </div>
 

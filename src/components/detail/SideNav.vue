@@ -5,6 +5,7 @@
         v-for="(location, title) in navItems"
         :key="title"
         :route="location.title"
+        :current="location.title === current_location"
       >
         {{ location.text }}
       </list-item>
@@ -30,7 +31,7 @@ export default {
       locations: 'locations',
     }),
     navItems() {
-      return this.locations.filter((item) => item.title !== this.current_location && item.title !== 'home');
+      return this.locations.filter((item) => item.title !== 'home');
     },
   },
 };
