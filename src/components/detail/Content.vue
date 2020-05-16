@@ -13,7 +13,7 @@ import Sound from '@/components/detail/content/Sound.vue';
 import Webdev from '@/components/detail/content/Webdev.vue';
 
 export default {
-  name: 'content',
+  name: 'my-content',
 
   props: ['location'],
 

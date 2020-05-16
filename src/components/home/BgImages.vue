@@ -1,21 +1,16 @@
 <template>
   <div id="bg-images" class="h-full grid grid-cols-3">
     <div
-      class="z-0 relative h-full bg-no-repeat bg-center bg-cover"
+      class="my-image z-0 relative bg-no-repeat bg-center bg-cover image-full-height"
       v-for="(image, title) in this.images"
       :key="title"
       :style="{
         'background-image': 'url(' + baseurl + image.title + '.jpg)',
       }"
-      :class="
-        location != 'home'
-          ? // && location != image.title
-            image.title + ' makeSmall'
-          : [location != 'home']
-          ? image.title
-          : image.title + ' makeSmall'
-      "
+      :class="[image.title, is_home]"
     >
+      <!--      :class="is_home ? image.title + ' makeSmall' : image.title" -->
+
       <div class="bg-secondary absolute top-0 right-0 w-full h-full z-10">
         <div
           class="w-full text-center absolute bottom-0 mb-48 text-secondary leading-normal"
@@ -38,31 +33,54 @@ export default {
   data() {
     return {
       baseurl: '/images/background/',
-      // images: [
-      //   {
-      //     title: 'bar',
-      //     text: 'Waiter / Bartender',
-      //   },
-      //   {
-      //     title: 'webdev',
-      //     text: 'Web Developer',
-      //   },
-      //   {
-      //     title: 'sound',
-      //     text: 'Sound Engineer',
-      //   },
-      // ],
     };
   },
 
   computed: {
     ...mapGetters({
-      location: 'current_location',
+      current_location: 'current_location',
       locations: 'locations',
     }),
 
     images() {
       return this.locations.filter((item) => item.title !== 'home');
+    },
+
+    is_home() {
+      const cl = this.current_location;
+      if (cl === 'home' || cl === '/') return false;
+
+      const array = [cl];
+      this.locations.forEach((location) => {
+        if (location.title !== cl && location.title !== 'home') {
+          array.unshift(location.title);
+        }
+      });
+      this.setHeight(array);
+      return true;
+    },
+  },
+
+  methods: {
+    setHeight(locations = ['bar', 'webdev', 'sound'], i = 0) {
+      setTimeout(() => {
+        if (i < 2) {
+          this.getElement(locations[0]);
+          locations.shift();
+        }
+        if (i === 2) {
+          this.getElement(locations);
+          return;
+        }
+        this.setHeight(locations, i + 1);
+      }, 180);
+    },
+
+    getElement(location) {
+      const element = this.$el.querySelector(`.${location}`);
+      console.log('element', element);
+      element.classList.remove('image-full-height');
+      element.classList.add('image-no-height');
     },
   },
 };
