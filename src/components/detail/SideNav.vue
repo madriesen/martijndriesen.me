@@ -1,6 +1,6 @@
 <template>
   <div class="text-primary">
-    <ul class="mt-8">
+    <ul class="mt-12">
       <list-item
         v-for="(location, title) in navItems"
         :key="title"
