@@ -1,5 +1,5 @@
 .aside-bar {
-    transition: background-image 200ms ease-in;
+    transition: background-image 500ms;
     transform-origin: top center;
     animation: fullHeight 600ms;
 }
@@ -15,8 +15,13 @@
 }
 
 .detail-header {
-    width:0;
+    width: 0;
     animation: fadeIn 1500ms;
+}
+
+.detail-header-hide {
+    width: 100%;
+    animation: fadeOut 500ms;
 }
 
 @keyframes fullHeight {
@@ -66,5 +71,14 @@
     }
     100% {
         width: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
     }
 }

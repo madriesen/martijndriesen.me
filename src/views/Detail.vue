@@ -3,21 +3,15 @@
     <aside-bar />
     <!-- content -->
     <div class="mt-12 w-full">
-      <div
-        class="title-div w-full h-32 bg-primary
-        flex items-center content-center justify-start  pl-24"
+      <content-title
+        :update="current_title.title"
+        :content="current_title.text"
       >
-        <h1 class="relative text-white text-6xl pt-3 overflow-hidden">
-          {{ this.title[0].text }}
-          <div
-            class="top-0 right-0 bottom-0
-          absolute h-full bg-primary detail-header"
-          ></div>
-        </h1>
-      </div>
+        {{ current_title.text }}
+      </content-title>
 
       <div class="detail-content pl-24 pt-16 w-2/3">
-        <my-content :location="this.title[0].title" />
+        <my-content :location="current_title.title" />
       </div>
     </div>
   </div>
@@ -25,16 +19,25 @@
 <script>
 import AsideBar from '@/components/detail/AsideBar.vue';
 import Content from '@/components/detail/Content.vue';
+import Title from '@/components/detail/Title.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'detail',
-  components: { 'aside-bar': AsideBar, 'my-content': Content },
+  components: {
+    'aside-bar': AsideBar,
+    'my-content': Content,
+    'content-title': Title,
+  },
 
   computed: {
     ...mapGetters({
       title: 'current_location_name',
     }),
+
+    current_title() {
+      return this.title[0];
+    },
   },
 
   methods: {

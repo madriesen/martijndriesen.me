@@ -9,8 +9,6 @@
       }"
       :class="[image.title, is_home]"
     >
-      <!--      :class="is_home ? image.title + ' makeSmall' : image.title" -->
-
       <div class="bg-secondary absolute top-0 right-0 w-full h-full z-10">
         <div
           class="w-full text-center absolute bottom-0 mb-48 text-secondary leading-normal"
@@ -78,7 +76,6 @@ export default {
 
     getElement(location) {
       const element = this.$el.querySelector(`.${location}`);
-      console.log('element', element);
       element.classList.remove('image-full-height');
       element.classList.add('image-no-height');
     },

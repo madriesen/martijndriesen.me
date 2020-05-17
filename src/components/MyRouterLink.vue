@@ -20,20 +20,27 @@ export default {
   methods: {
     ...mapActions({
       setCurrentLocation: 'setCurrentLocation',
+      updateDetailPage: 'updateDetailPage',
     }),
 
     updateLocation() {
-      let delaytime = 0;
-      if (
-        this.location !== '/'
-        && (this.current_location === 'home' || this.current_location === '/')
-      ) {
-        delaytime = 1000;
-      }
-      console.log('delaytime for ', this.location, delaytime);
+      let delaytime = 1000;
 
-      this.setCurrentLocation(this.location);
+      if (this.location === '/') delaytime = 0;
+
+      if (this.current_location !== 'home' && this.current_location !== '/') {
+        if (this.location !== '/') {
+          this.updateDetailPage(true);
+          this.$router.push(this.location);
+          setTimeout(() => {
+            this.setCurrentLocation(this.location);
+            this.updateDetailPage(false);
+          }, 500);
+          return;
+        }
+      }
       setTimeout(() => this.$router.push(this.location), delaytime);
+      this.setCurrentLocation(this.location);
     },
   },
 };

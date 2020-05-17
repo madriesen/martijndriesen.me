@@ -1,6 +1,6 @@
 <template>
   <section id="content-sound">
-    <h1>Sound</h1>
+    <h2>Sound</h2>
   </section>
 </template>
 

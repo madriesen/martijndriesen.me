@@ -1,6 +1,6 @@
 <template>
   <section id="content-webdev">
-    <h1>Webdev</h1>
+    <h2>Webdev</h2>
   </section>
 </template>
 
