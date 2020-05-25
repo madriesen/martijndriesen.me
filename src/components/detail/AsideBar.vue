@@ -1,6 +1,6 @@
 <template>
   <div
-    class="aside-bar h-full w-3/12 z-0
+    class="aside-bar h-full w-1/4 z-0
     relative h-full bg-no-repeat bg-center bg-cover
     "
     :style="{
