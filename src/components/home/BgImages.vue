@@ -96,6 +96,7 @@ export default {
     },
     setWidth(element) {
       element.classList.remove('hover:w-2/5');
+      element.classList.remove('w-1/3');
       element.classList.add('w-1/5');
     },
   },
