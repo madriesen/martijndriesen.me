@@ -12,7 +12,7 @@
       :class="[image.title, is_home]"
       :location="image.title"
     >
-      <div class="bg-secondary absolute top-0 right-0 w-full h-full z-10">
+      <div class="bg-secondary group-hover:bg-lighter absolute top-0 right-0 w-full h-full z-10">
         <div
           class="w-11/12 text-center absolute bottom-0 mb-48 text-secondary leading-normal"
         >
