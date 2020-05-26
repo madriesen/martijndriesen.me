@@ -1,33 +1,44 @@
 <template>
   <div id="bg-images" class="h-full flex">
-    <div
-      class="w-1/3 my-image z-0 relative bg-no-repeat
-      bg-center bg-cover h-full"
+    <my-router-link
+      class="group w-1/3 my-image z-0 relative bg-no-repeat
+      bg-center bg-cover h-full hover:w-2/5
+      transition-all duration-200"
       v-for="(image, title) in this.images"
       :key="title"
       :style="{
         'background-image': 'url(' + baseurl + image.title + '.jpg)',
       }"
       :class="[image.title, is_home]"
+      :location="image.title"
     >
       <div class="bg-secondary absolute top-0 right-0 w-full h-full z-10">
         <div
           class="w-11/12 text-center absolute bottom-0 mb-48 text-secondary leading-normal"
         >
-          <home-link :location="image.title">{{ image.text }}</home-link>
+          <h1
+            class="group-hover:text-primary
+            group-hover:underline home-link
+                    text-3xl
+                    transition
+                    duration-500
+                    ease-in-out"
+          >
+            {{ image.text }}
+          </h1>
         </div>
       </div>
-    </div>
+    </my-router-link>
   </div>
 </template>
 
 <script>
-import homeLink from '@/components/home/HomeLink.vue';
+// import homeLink from '@/components/home/HomeLink.vue';
 import { mapGetters } from 'vuex';
 
 export default {
   name: 'bg-images',
-  components: { 'home-link': homeLink },
+  // components: { 'home-link': homeLink },
 
   data() {
     return {
@@ -84,7 +95,7 @@ export default {
       element.classList.add('image-no-height');
     },
     setWidth(element) {
-      element.classList.remove('w-1/3');
+      element.classList.remove('hover:w-2/5');
       element.classList.add('w-1/5');
     },
   },

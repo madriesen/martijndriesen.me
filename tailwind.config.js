@@ -11,6 +11,7 @@ module.exports = {
     },
     extend: {},
   },
-  variants: {},
+  variants:
+    ['group-hover', 'hover'],
   plugins: [],
 };

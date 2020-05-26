@@ -7,7 +7,8 @@
       hover:underline
       transition
       duration-500
-      ease-in-out"
+      ease-in-out
+      h-full w-full"
     >
       <slot></slot>
     </h1>

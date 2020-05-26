@@ -1,9 +1,9 @@
 <template>
   <div id="homepage" class="h-full">
-    <div class="absolute w-full mt-32 z-20 flex items-center justify-center">
+    <div class="absolute w-full mt-32 z-20 flex items-center justify-center pointer-events-none">
       <logo
         :class="location !== 'home' ? 'opacity-0' : 'opacity-100'"
-        class="transition-opacity duration-500"
+        class="transition-opacity duration-500e"
       />
     </div>
     <bg-images class="z-0" />
