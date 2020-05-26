@@ -8,7 +8,8 @@
       target="_blank"
     >
       <div
-        class="h-full w-full bg-center bg-no-repeat bg-cover border-l-2 border-r-2 border-white"
+        class="h-full w-full bg-center bg-no-repeat bg-cover
+        border-l-2 border-r-2 border-white rounded"
         :style="{
           'background-image':
             'url(' + baseURL + image.name + '.' + image.ext + ')',
