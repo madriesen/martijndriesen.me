@@ -2,6 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '@/views/Home.vue';
 import Detail from '@/views/Detail.vue';
+import Bar from '@/views/Bar.vue';
+import Sound from '@/views/Sound.vue';
+import Webdev from '@/views/Webdev.vue';
 
 
 Vue.use(VueRouter);
@@ -13,20 +16,28 @@ const routes = [
     component: Home,
   },
   {
-    path: '/bar',
-    name: 'bar',
+    path: '/detail',
+    name: 'detail',
     component: Detail,
+    children: [
+      {
+        path: '/bar',
+        name: 'bar',
+        component: Bar,
+      },
+      {
+        path: '/sound',
+        name: 'sound',
+        component: Sound,
+      },
+      {
+        path: '/webdev',
+        name: 'webdev',
+        component: Webdev,
+      },
+    ],
   },
-  {
-    path: '/sound',
-    name: 'sound',
-    component: Detail,
-  },
-  {
-    path: '/webdev',
-    name: 'webdev',
-    component: Detail,
-  },
+
 ];
 
 const router = new VueRouter({

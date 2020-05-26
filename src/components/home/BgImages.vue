@@ -10,7 +10,7 @@
         'background-image': 'url(' + baseurl + image.title + '.jpg)',
       }"
       :class="[image.title, is_home]"
-      :location="image.title"
+      :location="`/detail/${image.title}`"
     >
       <div class="bg-secondary group-hover:bg-lighter absolute top-0 right-0 w-full h-full z-10">
         <div

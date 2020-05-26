@@ -1,11 +1,11 @@
 <template>
-  <section id="content-sound">
-    <h2>Sound</h2>
+  <section id="content-webdev">
+    <h2>Test</h2>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'sound-content',
+  name: 'webdev-content',
 };
 </script>

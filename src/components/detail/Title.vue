@@ -1,7 +1,7 @@
 <template>
   <div
     class="title-div w-full h-32 bg-primary
-        flex items-center content-center justify-start  pl-24"
+        flex items-center content-center justify-start pl-24"
   >
     <h1
       id="contenttitle"

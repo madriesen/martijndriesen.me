@@ -11,7 +11,6 @@ export default new Vuex.Store({
       { title: 'bar', text: 'Waiter / Bartender' },
       { title: 'webdev', text: 'Web Developer' },
       { title: 'sound', text: 'Sound Engineer' },
-      // { title: 'contact', text: 'Contact' },
     ],
     update_detail_page: false,
   },

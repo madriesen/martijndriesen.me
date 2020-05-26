@@ -4,7 +4,7 @@
       <list-item
         v-for="(location, title) in navItems"
         :key="title"
-        :route="location.title"
+        :route="`/detail/${location.title}`"
         :current="location.title === current_location"
       >
         {{ location.text }}

@@ -15,6 +15,10 @@ export default {
     ...mapGetters({
       current_location: 'current_location',
     }),
+    next_location() {
+      if (this.location.indexOf('/detail/') === -1) return this.location;
+      return this.location.substr(8);
+    },
   },
 
   methods: {
@@ -24,23 +28,24 @@ export default {
     }),
 
     updateLocation() {
+      console.log('this.location', this.next_location);
       let delaytime = 1000;
 
-      if (this.location === '/') delaytime = 0;
+      if (this.next_location === '/') delaytime = 0;
 
       if (this.current_location !== 'home' && this.current_location !== '/') {
-        if (this.location !== '/') {
+        if (this.next_location !== '/') {
           this.updateDetailPage(true);
-          this.$router.push(this.location);
+          this.$router.push(this.next_location);
           setTimeout(() => {
-            this.setCurrentLocation(this.location);
+            this.setCurrentLocation(this.next_location);
             this.updateDetailPage(false);
           }, 500);
           return;
         }
       }
-      setTimeout(() => this.$router.push(this.location), delaytime);
-      this.setCurrentLocation(this.location);
+      setTimeout(() => this.$router.push(this.next_location), delaytime);
+      this.setCurrentLocation(this.next_location);
     },
   },
 };
